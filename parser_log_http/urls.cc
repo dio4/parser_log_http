@@ -2,7 +2,6 @@
 #include <cctype>
 #include <string>
 #include <vector>
-
 #include "urls.h"
 
 using std::find;
@@ -40,13 +39,13 @@ vector<string> find_urls(const string& s)
 
 		// если нали
 		if (b != e) {
-			// получаем остальную часть адреса \s-1URL\s0
+			// получаем остальную часть адреса 
 			iter after = url_end(b, e);
 
 			// запоминаем адрес \s-1URL\s0
 			ret.push_back(string(b, after));
 
-			// передвигаем  `b' для попытки отыскать адрес  \s-1URL\s0s в этой строке
+			// передвигаем  `b' для попытки отыскать адрес  в этой строке
 			b = after;
 		}
 	}
@@ -61,7 +60,7 @@ url_end(string::const_iterator b, string::const_iterator e)
 
 bool not_url_char(char c)
 {
-	// символы кроме букв и цифр, которые мб включены в URL \s-1URL\s0
+	// символы кроме букв и цифр, которые мб включены в URL 
 	static const string url_ch = "~;/?:@=&$-_.+!*'(),";
 
 	// смотрим, может ли символ `c' быть частью URL адреса и возвр.отрицание значения ответа
